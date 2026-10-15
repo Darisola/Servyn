@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Servyn — Coming to Manchester</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+--deep: #1B3A2D;
+--mid: #2D5A42;
+--gold: #E9A84C;
+--gold-lt: #F5D9A0;
+--cream: #F5F0E8;
+--sage: #8FB0A0;
+--charcoal:#1A1A1A;
+--grey: #6B7A74;
+--line: #D4CFC6;
+--white: #FFFFFF;
+--radius: 10px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+font-family: 'Inter', sans-serif;
+background: var(--cream);
+color: var(--charcoal);
+line-height: 1.6;
+font-size: 16px;
+-webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+position: fixed;
+top: 0; left: 0; right: 0;
+z-index: 100;
+padding: 18px 6%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background: rgba(27, 58, 45, 0.97);
+backdrop-filter: blur(8px);
+}
+
+.logo {
+font-family: 'Playfair Display', serif;
+font-size: 1.5rem;
+color: var(--white);
+letter-spacing: -0.02em;
+}
+.logo span { color: var(--gold); }
+
+.nav-pill {
+font-size: 0.78rem;
+font-weight: 500;
+background: var(--gold);
+color: var(--deep);
+padding: 6px 16px;
+border-radius: 50px;
+text-decoration: none;
+letter-spacing: 0.01em;
+}
+
+/* ── HERO ── */
+.hero {
+min-height: 100vh;
+background: var(--deep);
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 120px 6% 80px;
+position: relative;
+overflow: hidden;
+}
+
+.hero::before {
+content: '';
+position: absolute;
+width: 600px;
+height: 600px;
+border-radius: 50%;
+background: var(--mid);
+opacity: 0.35;
+right: -180px;
+top: -140px;
+pointer-events: none;
+}
+
+.hero::after {
+content: '';
+position: absolute;
+width: 320px;
+height: 320px;
+border-radius: 50%;
+background: var(--gold);
+opacity: 0.07;
+right: 120px;
+bottom: 60px;
+pointer-events: none;
+}
+
+.hero-label {
+display: inline-block;
+font-size: 0.75rem;
+font-weight: 600;
+color: var(--gold);
+letter-spacing: 0.12em;
+text-transform: uppercase;
+margin-bottom: 24px;
+position: relative;
+}
+
+.hero-label::before {
+content: '';
+display: inline-block;
+width: 28px;
+height: 2px;
+background: var(--gold);
+vertical-align: middle;
+margin-right: 10px;
+opacity: 0.7;
+}
+
+.hero h1 {
+font-family: 'Playfair Display', serif;
+font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+color: var(--white);
+line-height: 1.12;
+letter-spacing: -0.02em;
+max-width: 700px;
+margin-bottom: 28px;
+}
+
+.hero h1 em {
+color: var(--gold);
+font-style: normal;
+}
+
+.hero-sub {
+font-size: 1.05rem;
+color: var(--sage);
+max-width: 520px;
+line-height: 1.7;
+font-weight: 300;
+margin-bottom: 48px;
+}
+
+.hero-actions {
+display: flex;
+gap: 14px;
+flex-wrap: wrap;
+}
+
+.btn-primary {
+background: var(--gold);
+color: var(--deep);
+font-weight: 600;
+font-size: 0.9rem;
+padding: 14px 28px;
+border-radius: var(--radius);
+border: none;
+cursor: pointer;
+text-decoration: none;
+display: inline-block;
+transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--gold-lt); transform: translateY(-1px); }
+
+.btn-outline {
+background: transparent;
+color: var(--white);
+font-weight: 500;
+font-size: 0.9rem;
+padding: 14px 28px;
+border-radius: var(--radius);
+border: 1.5px solid rgba(255,255,255,0.25);
+cursor: pointer;
+text-decoration: none;
+display: inline-block;
+transition: border-color 0.2s, background 0.2s;
+}
+.btn-outline:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); }
+
+.hero-stats {
+display: flex;
+gap: 40px;
+margin-top: 60px;
+padding-top: 40px;
+border-top: 1px solid rgba(255,255,255,0.08);
+flex-wrap: wrap;
+}
+
+.stat-num {
+font-family: 'Playfair Display', serif;
+font-size: 2rem;
+color: var(--gold);
+line-height: 1;
+margin-bottom: 4px;
+}
+
+.stat-label {
+font-size: 0.78rem;
+color: var(--sage);
+font-weight: 400;
+line-height: 1.4;
+max-width: 120px;
+}
+
+/* ── SECTIONS ── */
+section {
+padding: 90px 6%;
+}
+
+.section-inner {
+max-width: 900px;
+margin: 0 auto;
+}
+
+.eyebrow {
+font-size: 0.75rem;
+font-weight: 600;
+color: var(--gold);
+text-transform: uppercase;
+letter-spacing: 0.1em;
+margin-bottom: 14px;
+}
+
+h2 {
+font-family: 'Playfair Display', serif;
+font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+color: var(--deep);
+line-height: 1.2;
+letter-spacing: -0.02em;
+margin-bottom: 18px;
+}
+
+.section-lead {
+font-size: 1rem;
+color: var(--grey);
+line-height: 1.75;
+max-width: 580px;
+font-weight: 300;
+margin-bottom: 48px;
+}
+
+/* ── HOW IT WORKS ── */
+.how-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 2px;
+background: var(--line);
+border-radius: var(--radius);
+overflow: hidden;
+}
+
+.how-cell {
+background: var(--white);
+padding: 32px 28px;
+}
+
+.how-cell:last-child:nth-child(odd) {
+grid-column: span 2;
+}
+
+.how-icon {
+font-size: 1.4rem;
+margin-bottom: 14px;
+display: block;
+}
+
+.how-cell h3 {
+font-size: 1rem;
+font-weight: 600;
+color: var(--deep);
+margin-bottom: 8px;
+}
+
+.how-cell p {
+font-size: 0.875rem;
+color: var(--grey);
+line-height: 1.65;
+}
+
+/* ── SURVEY SECTION ── */
+.survey-section {
+background: var(--deep);
+padding: 90px 6%;
+}
+
+.survey-section h2 { color: var(--white); }
+.survey-section .eyebrow { color: var(--gold); }
+.survey-section .section-lead { color: var(--sage); }
+
+.survey-toggle {
+display: flex;
+gap: 0;
+background: rgba(255,255,255,0.07);
+border-radius: var(--radius);
+padding: 4px;
+max-width: 340px;
+margin-bottom: 40px;
+}
+
+.toggle-btn {
+flex: 1;
+padding: 10px 20px;
+border: none;
+border-radius: 8px;
+font-size: 0.875rem;
+font-weight: 500;
+cursor: pointer;
+transition: all 0.2s;
+background: transparent;
+color: var(--sage);
+}
+
+.toggle-btn.active {
+background: var(--gold);
+color: var(--deep);
+font-weight: 600;
+}
+
+.survey-form {
+display: none;
+max-width: 640px;
+}
+
+.survey-form.visible { display: block; }
+
+.form-group {
+margin-bottom: 28px;
+}
+
+.form-group label {
+display: block;
+font-size: 0.9rem;
+font-weight: 500;
+color: var(--white);
+margin-bottom: 10px;
+line-height: 1.5;
+}
+
+.form-group .q-num {
+display: inline-block;
+width: 22px;
+height: 22px;
+background: var(--gold);
+color: var(--deep);
+font-size: 0.65rem;
+font-weight: 700;
+border-radius: 50%;
+text-align: center;
+line-height: 22px;
+margin-right: 8px;
+flex-shrink: 0;
+vertical-align: middle;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+width: 100%;
+background: rgba(255,255,255,0.07);
+border: 1.5px solid rgba(255,255,255,0.15);
+border-radius: var(--radius);
+padding: 13px 16px;
+font-size: 0.9rem;
+color: var(--white);
+font-family: 'Inter', sans-serif;
+outline: none;
+transition: border-color 0.2s;
+-webkit-appearance: none;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder { color: rgba(255,255,255,0.3); }
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus { border-color: var(--gold); }
+
+select { cursor: pointer; }
+select option { background: var(--deep); color: var(--white); }
+textarea { resize: vertical; min-height: 90px; }
+
+.radio-group,
+.checkbox-group {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.radio-group label,
+.checkbox-group label {
+display: flex;
+align-items: flex-start;
+gap: 12px;
+font-weight: 400;
+cursor: pointer;
+padding: 12px 16px;
+border-radius: 8px;
+border: 1.5px solid rgba(255,255,255,0.1);
+transition: border-color 0.15s, background 0.15s;
+color: var(--sage);
+font-size: 0.875rem;
+line-height: 1.5;
+margin-bottom: 0;
+}
+
+.radio-group label:hover,
+.checkbox-group label:hover {
+border-color: var(--gold);
+background: rgba(233,168,76,0.06);
+}
+
+.radio-group input,
+.checkbox-group input {
+width: 16px;
+height: 16px;
+flex-shrink: 0;
+margin-top: 2px;
+accent-color: var(--gold);
+background: transparent;
+border: none;
+padding: 0;
+}
+
+.radio-group input:checked + span,
+.checkbox-group input:checked + span {
+color: var(--white);
+}
+
+.form-divider {
+height: 1px;
+background: rgba(255,255,255,0.08);
+margin: 36px 0;
+}
+
+.contact-row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 14px;
+}
+
+.submit-btn {
+width: 100%;
+padding: 16px;
+background: var(--gold);
+color: var(--deep);
+font-weight: 700;
+font-size: 1rem;
+border: none;
+border-radius: var(--radius);
+cursor: pointer;
+font-family: 'Inter', sans-serif;
+transition: background 0.2s, transform 0.15s;
+margin-top: 12px;
+}
+.submit-btn:hover { background: var(--gold-lt); transform: translateY(-1px); }
+.submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.form-note {
+font-size: 0.75rem;
+color: var(--sage);
+margin-top: 12px;
+opacity: 0.7;
+}
+
+/* ── SUCCESS STATE ── */
+.success-msg {
+display: none;
+background: rgba(74,222,128,0.1);
+border: 1px solid rgba(74,222,128,0.3);
+border-radius: var(--radius);
+padding: 28px;
+text-align: center;
+}
+
+.success-msg.visible { display: block; }
+
+.success-msg .tick {
+font-size: 2rem;
+margin-bottom: 12px;
+}
+
+.success-msg h3 {
+color: var(--white);
+font-family: 'Playfair Display', serif;
+font-size: 1.3rem;
+margin-bottom: 8px;
+}
+
+.success-msg p {
+color: var(--sage);
+font-size: 0.9rem;
+line-height: 1.6;
+}
+
+/* ── VENDOR SECTION ── */
+.vendor-strip {
+background: var(--white);
+padding: 90px 6%;
+}
+
+.vendor-two-col {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 60px;
+align-items: center;
+max-width: 900px;
+margin: 0 auto;
+}
+
+.vendor-quote {
+font-family: 'Playfair Display', serif;
+font-size: 1.35rem;
+color: var(--deep);
+line-height: 1.5;
+border-left: 3px solid var(--gold);
+padding-left: 24px;
+margin-bottom: 24px;
+}
+
+.vendor-body {
+font-size: 0.9rem;
+color: var(--grey);
+line-height: 1.75;
+margin-bottom: 24px;
+}
+
+.checklist {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+.checklist li {
+display: flex;
+align-items: flex-start;
+gap: 12px;
+font-size: 0.875rem;
+color: var(--charcoal);
+line-height: 1.5;
+}
+
+.checklist li::before {
+content: '✓';
+width: 20px;
+height: 20px;
+background: var(--gold);
+color: var(--deep);
+font-size: 0.65rem;
+font-weight: 800;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+margin-top: 1px;
+}
+
+/* ── FOOTER ── */
+footer {
+background: var(--charcoal);
+padding: 40px 6%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 16px;
+}
+
+.footer-logo {
+font-family: 'Playfair Display', serif;
+font-size: 1.1rem;
+color: var(--white);
+}
+.footer-logo span { color: var(--gold); }
+
+.footer-note {
+font-size: 0.75rem;
+color: #666;
+line-height: 1.6;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 680px) {
+.how-grid { grid-template-columns: 1fr; }
+.how-cell:last-child:nth-child(odd) { grid-column: span 1; }
+.vendor-two-col { grid-template-columns: 1fr; gap: 32px; }
+.hero-stats { gap: 28px; }
+.contact-row { grid-template-columns: 1fr; }
+.hero-actions { flex-direction: column; }
+.btn-primary, .btn-outline { text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+* { transition: none !important; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+<div class="logo">Serv<span>yn</span></div>
+<a href="#survey" class="nav-pill">Join the waitlist</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+<div class="hero-label">Coming to Manchester</div>
+
+<h1>Your community.<br>Your services.<br><em>Finally, one place.</em></h1>
+
+<p class="hero-sub">
+Servyn is a marketplace for Afro-Caribbean and multicultural service providers in Manchester — braiders, barbers, makeup artists, event planners, and more. We're building it for you, and we want to hear from you before we launch.
+</p>
+
+<div class="hero-actions">
+<a href="#survey" class="btn-primary">Share your experience</a>
+<a href="#how-it-works" class="btn-outline">See how it works</a>
+</div>
+
+<div class="hero-stats">
+<div>
+<div class="stat-num">£2B+</div>
+<div class="stat-label">spent annually on community services in the UK</div>
+</div>
+<div>
+<div class="stat-num">0</div>
+<div class="stat-label">dedicated marketplace platforms for this community</div>
+</div>
+<div>
+<div class="stat-num">Manchester</div>
+<div class="stat-label">where we're launching first</div>
+</div>
+</div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" style="background: var(--white);">
+<div class="section-inner">
+<div class="eyebrow">How Servyn works</div>
+<h2>Book with confidence.<br>Pay with protection.</h2>
+<p class="section-lead">
+Every booking on Servyn comes with a payment held securely until you confirm the service is done. No more paying upfront and hoping for the best.
+</p>
+
+<div class="how-grid">
+<div class="how-cell">
+<span class="how-icon">🔍</span>
+<h3>Find your provider</h3>
+<p>Browse verified service providers near you, filtered by service, location, and availability. Or describe what you need and let our AI find the best match.</p>
+</div>
+<div class="how-cell">
+<span class="how-icon">📅</span>
+<h3>Book a time that works</h3>
+<p>See real-time availability and book instantly. No back-and-forth messages. No waiting days for a reply.</p>
+</div>
+<div class="how-cell">
+<span class="how-icon">🔒</span>
+<h3>Pay securely</h3>
+<p>Your payment is held in escrow until you confirm the service is done. The provider only gets paid when you're satisfied.</p>
+</div>
+<div class="how-cell">
+<span class="how-icon">⭐</span>
+<h3>Leave a review</h3>
+<p>Every completed booking builds a verified review record — helping others in the community find providers they can trust.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- VENDOR SECTION -->
+<section class="vendor-strip" id="vendors">
+<div class="vendor-two-col">
+<div>
+<div class="eyebrow">For service providers</div>
+<div class="vendor-quote">"Most of my bookings still come through WhatsApp. I have no way to show my track record."</div>
+<p class="vendor-body">If you run a hair, beauty, events, or home services business in Manchester, Servyn is built for you. We give you the tools to manage bookings, take payments safely, build a verified profile, and grow — without paying anything until you earn.</p>
+<a href="#survey" class="btn-primary" style="background: var(--deep); color: var(--white); display:inline-block;">Register your interest</a>
+</div>
+<div>
+<ul class="checklist">
+<li>Your own profile page with portfolio, services, and verified reviews</li>
+<li>Real-time booking calendar — no more double-booking or missed appointments</li>
+<li>Secure payments with weekly payouts — you keep 90%</li>
+<li>Messaging with clients, built in</li>
+<li>Earnings dashboard so you can see your business growing</li>
+<li>Free to join and list — you only pay when you get paid</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- SURVEY SECTION -->
+<section class="survey-section" id="survey">
+<div class="section-inner">
+<div class="eyebrow">We're listening</div>
+<h2>Tell us about your experience</h2>
+<p class="section-lead">
+Servyn isn't live yet — and that's deliberate. We want to hear directly from the community before we build. Two minutes. No right answers.
+</p>
+
+<!-- Toggle -->
+<div class="survey-toggle">
+<button class="toggle-btn active" onclick="showSurvey('buyer')" id="btn-buyer">I'm a buyer</button>
+<button class="toggle-btn" onclick="showSurvey('vendor')" id="btn-vendor">I'm a provider</button>
+</div>
+
+<!-- BUYER SURVEY -->
+<form class="survey-form visible" id="survey-buyer" onsubmit="submitForm(event, 'buyer')">
+
+<div class="form-group">
+<label><span class="q-num">1</span> How do you currently find Afro-Caribbean or multicultural service providers in Manchester?</label>
+<div class="radio-group">
+<label><input type="radio" name="b_discovery" value="word_of_mouth"> <span>Word of mouth / asking friends and family</span></label>
+<label><input type="radio" name="b_discovery" value="whatsapp_groups"> <span>WhatsApp or Facebook community groups</span></label>
+<label><input type="radio" name="b_discovery" value="instagram"> <span>Instagram or TikTok</span></label>
+<label><input type="radio" name="b_discovery" value="google"> <span>Google search</span></label>
+<label><input type="radio" name="b_discovery" value="other"> <span>Other</span></label>
+</div>
+</div>
+
+<div class="form-group">
+<label><span class="q-num">2</span> How often do you book these types of services?</label>
+<div class="radio-group">
+<label><input type="radio" name="b_frequency" value="monthly"> <span>Once a month or more</span></label>
+<label><input type="radio" name="b_frequency" value="few_months"> <span>Every few months</span></label>
+<label><input type="radio" name="b_frequency" value="rarely"> <span>A few times a year</span></label>
+<label><input type="radio" name="b_frequency" value="rarely2"> <span>Rarely</span></label>
+</div>
+</div>
+
+<div class="form-group">
+<label><span class="q-num">3</span> Have you ever had a problem — been let down, paid and not received the service, or struggled to find someone reliable?</label>
+<div class="radio-group">
+<label><input type="radio" name="b_problem" value="yes_often"> <span>Yes, more than once</span></label>
+<label><input type="radio" name="b_problem" value="yes_once"> <span>Yes, it's happened</span></label>
+<label><input type="radio" name="b_problem" value="no"> <span>Not personally, but I know people who have</span></label>
+<label><input type="radio" name="b_problem" value="never"> <span>No, I haven't had issues</span></label>
+</div>
+</div>
+
+<div class="form-group">
+<label><span class="q-num">4</span> Tell us what happened, if you're comfortable (optional)</label>
+<textarea name="b_problem_detail" placeholder="e.g. paid in advance, provider cancelled last minute and wouldn't refund..."></textarea>
+</div>
+
+<div class="form-divider"></div>
+
+<div class="form-group">
+<label><span class="q-num">5</span> Would you use a dedicated platform to find and book community service providers in Manchester?</label>
+<div class="radio-group">
+<label><input type="radio" name="b_would_use" value="definitely"> <span>Definitely — I'd switch from how I currently find providers</span></label>
+<label><input type="radio" name="b_would_use" value="probably"> <span>Probably, if the right providers were on it</span></label>
+<label><input type="radio" name="b_would_use" value="maybe"> <span>Maybe — depends on what's available</span></label>
+<label><input type="radio" name="b_would_use" value="no"> <span>Probably not</span></label>
+</div>
+</div>
+
+<div class="form-group">
+<label><span class="q-num">6</span> What would make you trust a new platform to handle your payment? (pick all that apply)</label>
+<div class="checkbox-group">
+<label><input type="checkbox" name="b_trust" value="escrow"> <span>Payment held until I confirm I'm happy (escrow)</span></label>
+<label><input type="checkbox" name="b_trust" value="reviews"> <span>Verified customer reviews</span></label>
+<label><input type="checkbox" name="b_trust" value="community"> <span>Known community presence / word from people I trust</span></label>
+<label><input type="checkbox" name="b_trust" value="refund_policy"> <span>A clear refund and cancellation policy</span></label>
+<label><input type="checkbox" name="b_trust" value="verified_id"> <span>ID-verified providers</span></label>
+</div>
+</div>
+
+<div class="form-group">
+<label><span class="q-num">7</span> Which services do you use most often? (pick all that apply)</label>
+<div class="checkbox-group">
+<label><input type="checkbox" name="b_services" value="hair"> <span>Hair — braiding, weaves, natural hair</span></label>
+<label><input type="checkbox" name="b_services" value="nails"> <span>Nails</span></label>
+<label><input type="checkbox" name="b_services" value="makeup"> <span>Makeup</span></label>
+<label><input type="checkbox" name="b_services" value="barber"> <span>Barber / grooming</span></label>
+<label><input type="checkbox" name="b_services" value="events"> <span>Events — catering, planning, decoration</span></label>
+<label><input type="checkbox" name="b_services" value="childcare"> <span>Childcare / tutoring</span></label>
+<label><input type="checkbox" name="b_services" value="home"> <span>Home services — cleaning, repairs</span></label>
+<label><input type="checkbox" name="b_services" value="other"> <span>Other</span></label>
+</div>
+</div>
+
+<div class="form-group">
+<label><span class="q-num">8</span> Where in Greater Manchester are you based?</label>
+<select name="b_location">
+<option value="" disabled selected>Select your area</option>
+<option>Manchester City Centre</option>
+<option>Moss Side / Hulme</option>
+<option>Longsight / Levenshulme</option>
+<option>Chorlton / Didsbury</option>
+<option>Salford</option>
+<option>Oldham</option>
+<option>Bolton</option>
+<option>Stockport</option>
+<option>Other Greater Manchester</option>
+<option>Outside Manchester</option>
+</select>
+</div>
+
+<div class="form-divider"></div>
+
+<div class="form-group">
+<label><span class="q-num">9</span> Would you like to be among the first to use Servyn when it launches?</label>
+<div class="radio-group">
+<label><input type="radio" name="b_waitlist" value="yes"> <span>Yes — add me to the waitlist</span></label>
+<label><input type="radio" name="b_waitlist" value="updates_only"> <span>Just keep me updated</span></label>
+<label><input type="radio" name="b_waitlist" value="no"> <span>No thanks</span></label>
+</div>
+</div>
+
+<div class="form-group">
+<label><span class="q-num">10</span> Can we contact you for a 10-minute chat? (optional — but very appreciated)</label>
+<div class="contact-row">
+<input type="text" name="b_name" placeholder="Your first name">
+<input type="email" name="b_email" placeholder="Email address">
+</div>
+</div>
+
+<div class="form-group">
+<label style="font-size:0.82rem; color: var(--sage); font-weight:400;">Anything else you'd like us to know? (optional)</label>
+<textarea name="b_other" placeholder="Anything we didn't ask about..."></textarea>
+</div>
+
+<button type="submit" class="submit-btn" id="submit-buyer">Submit — and join the waitlist</button>
+<p class="form-note">Your responses are confidential and used only to shape how Servyn is built. We won't share your details with anyone.</p>
+</form>
+
+<!-- VENDOR SURVEY -->
+<form class="survey-form" id="survey-vendor" onsubmit="submitForm(event, 'vendor')">
+
+<div class="form-group">
+<label><span class="q-num">1</span> What service do you provide?</label>
+<select name="v_category">
+<option value="" disabled selected>Select your category</option>
+<option>Hair — braiding, weaves, natural hair</option>
+<option>Nails</option>
+<option>Makeup / beauty</option>
+<option>Barber / grooming</option>
+<option>Events — catering, planning, decoration</option>
+<option>Childcare / tutoring</option>
+<option>Home services — cleaning, repairs</option>
+<option>Photography / videography</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label><span class="q-num">2</span> How long have you been running your business?</label>
+<div class="radio-group">
+<label><input type="radio" name="v_experience" value="less_1"> <span>Less than a year</span></label>
+<label><input type="radio" name="v_experience" value="1_3"> <span>1–3 years</span></label>
+<label><input type="radio" name="v_experience" value="3_5"> <span>3–5 years</span></label>
+<label><input type="radio" name="v_experience" value="5_plus"> <span>More than 5 years</span></label>
+</div>
+</div>
+
+<div class="form-group">
+<label><span class="q-num">3</span> How do most of your clients currently find you? (pick all that apply)</label>
+<div class="checkbox-group">
+<label><input type="checkbox" name="v_discovery" value="instagram"> <span>Instagram or TikTok</span></label>
+<label><input type="checkbox" name="v_discovery" value="whatsapp"> <span>WhatsApp referrals</span></label>
+<label><input type="checkbox" name="v_discovery" value="word_of_mouth"> <span>Word of mouth</span></label>
+<label><input type="checkbox" name="v_discovery" value="google"> <span>Google / website</span></label>
+<label><input type="checkbox" name="v_discovery" value="facebook"> <span>Facebook groups</span></label>
+<label><input type="checkbox" name="v_discovery" value="existing_platform"> <span>An existing booking platform</span></label>
+</div>
+</div>
+
+<div class="form-group">
+<label><span class="q-num">4</span> How do you currently handle payments?</label>
+<div class="radio-group">
+<label><input type="radio" name="v_payments" value="cash"> <span>Cash only</span></label>
+<label><input type="radio" name="v_payments" value="bank_transfer"> <span>Bank transfer</span></label>
+<label><input type="radio" name="v_payments" value="mix"> <span>Mix of cash and bank transfer</span></label>
+<label><input type="radio" name="v_payments" value="card"> <span>Card reader / SumUp / Square</span></label>
+<label><input type="radio" name="v_payments" value="platform"> <span>Through an existing platform</span></label>
+</div>
+</div>
+
+<div class="form-group">
+<label><span class="q-num">5</span> Have you ever had a problem with payment — a client who didn't pay, a last-minute cancellation, or a chargeback?</label>
+<div class="radio-group">
+<label><input type="radio" name="v_payment_issues" value="yes_often"> <span>Yes, it's a regular issue</span></label>
+<label><input type="radio" name="v_payment_issues" value="yes_once"> <span>Yes, it's happened to me</span></label>
+<label><input type="radio" name="v_payment_issues" value="no"> <span>Not yet, but I worry about it</span></label>
+<label><input type="radio" name="v_payment_issues" value="never"> <span>No, I haven't had issues</span></label>
+</div>
+</div>
+
+<div class="form-divider"></div>
+
+<div class="form-group">
+<label><span class="q-num">6</span> Would you list your services on a dedicated platform that brings you verified customers?</label>
+<div class="radio-group">
+<label><input type="radio" name="v_would_list" value="yes"> <span>Yes — I'd join as soon as it's available</span></label>
+<label><input type="radio" name="v_would_list" value="probably"> <span>Probably, if the pricing is fair</span></label>
+<label><input type="radio" name="v_would_list" value="maybe"> <span>Maybe — I'd want to see it first</span></label>
+<label><input type="radio" name="v_would_list" value="no"> <span>No, I'm happy with how things work now</span></label>
+</div>
+</div>
+
+<div class="form-group">
+<label><span class="q-num">7</span> Servyn takes 10% of each completed booking in exchange for handling payments, bringing you customers, and protecting you from no-shows. Does that feel fair?</label>
+<div class="radio-group">
+<label><input type="radio" name="v_commission" value="fair"> <span>Yes — fair trade for what it offers</span></label>
+<label><input type="radio" name="v_commission" value="ok"> <span>It's okay, depending on the volume it brings</span></label>
+<label><input type="radio" name="v_commission" value="too_high"> <span>That feels too high</span></label>
+<label><input type="radio" name="v_commission" value="depends"> <span>Depends — I'd want to understand more</span></label>
+</div>
+</div>
+
+<div class="form-group">
+<label><span class="q-num">8</span> What's your biggest challenge running your business day to day?</label>
+<div class="checkbox-group">
+<label><input type="checkbox" name="v_challenges" value="finding_clients"> <span>Finding new clients consistently</span></label>
+<label><input type="checkbox" name="v_challenges" value="no_shows"> <span>No-shows and last-minute cancellations</span></label>
+<label><input type="checkbox" name="v_challenges" value="late_payment"> <span>Late or unpaid invoices</span></label>
+<label><input type="checkbox" name="v_challenges" value="scheduling"> <span>Managing my schedule and double-bookings</span></label>
+<label><input type="checkbox" name="v_challenges" value="visibility"> <span>Getting found online</span></label>
+<label><input type="checkbox" name="v_challenges" value="reputation"> <span>Building a credible public profile and reviews</span></label>
+</div>
+</div>
+
+<div class="form-group">
+<label><span class="q-num">9</span> Where in Greater Manchester are you based?</label>
+<select name="v_location">
+<option value="" disabled selected>Select your area</option>
+<option>Manchester City Centre</option>
+<option>Moss Side / Hulme</option>
+<option>Longsight / Levenshulme</option>
+<option>Chorlton / Didsbury</option>
+<option>Salford</option>
+<option>Oldham</option>
+<option>Bolton</option>
+<option>Stockport</option>
+<option>Other Greater Manchester</option>
+<option>Outside Manchester</option>
+</select>
+</div>
+
+<div class="form-divider"></div>
+
+<div class="form-group">
+<label><span class="q-num">10</span> Would you like to be among Servyn's first verified vendors when we launch?</label>
+<div class="radio-group">
+<label><input type="radio" name="v_waitlist" value="yes"> <span>Yes — I want to be first</span></label>
+<label><input type="radio" name="v_waitlist" value="updates_only"> <span>Not yet, but keep me posted</span></label>
+<label><input type="radio" name="v_waitlist" value="no"> <span>No thanks</span></label>
+</div>
+</div>
+
+<div class="form-group">
+<label><span class="q-num">11</span> Can we contact you for a 10-minute chat? We'd love to hear more about your business.</label>
+<div class="contact-row">
+<input type="text" name="v_name" placeholder="Your name">
+<input type="email" name="v_email" placeholder="Email or phone">
+</div>
+</div>
+
+<div class="form-group">
+<label style="font-size:0.82rem; color: var(--sage); font-weight:400;">Anything else you'd want from a platform like Servyn? (optional)</label>
+<textarea name="v_other" placeholder="Features, concerns, questions..."></textarea>
+</div>
+
+<button type="submit" class="submit-btn" id="submit-vendor">Submit — register my interest as a provider</button>
+<p class="form-note">Your responses are confidential and used only to shape how Servyn is built. We won't share your details with anyone.</p>
+</form>
+
+<!-- SUCCESS MESSAGES -->
+<div class="success-msg" id="success-buyer">
+<div class="tick">✅</div>
+<h3>Thank you — you're on the list.</h3>
+<p>We'll be in touch before Servyn goes live in Manchester. If you said you're open to a chat, expect a message from Yetunde personally. Your input shapes what we build.</p>
+</div>
+
+<div class="success-msg" id="success-vendor">
+<div class="tick">✅</div>
+<h3>Brilliant — we'll be in touch.</h3>
+<p>You're one of the first service providers to register interest in Servyn. We're targeting a Manchester launch in early 2027 and you'll hear from us directly before we go live. Thank you for your time.</p>
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-logo">Serv<span>yn</span></div>
+<div class="footer-note">
+Servyn Ltd · Manchester, UK · Pre-launch 2026<br>
+hello@servyn.co.uk · servyn.co.uk
+</div>
+<div class="footer-note" style="text-align:right;">
+Built for community.<br>Launching in Manchester.
+</div>
+</footer>
+
+<script>
+// Survey toggle
+function showSurvey(type) {
+const forms = document.querySelectorAll('.survey-form');
+const success = document.querySelectorAll('.success-msg');
+const btnBuyer = document.getElementById('btn-buyer');
+const btnVendor= document.getElementById('btn-vendor');
+
+forms.forEach(f => f.classList.remove('visible'));
+success.forEach(s => s.classList.remove('visible'));
+
+document.getElementById('survey-' + type).classList.add('visible');
+btnBuyer.classList.toggle('active', type === 'buyer');
+btnVendor.classList.toggle('active', type === 'vendor');
+}
+
+// Form submission
+function submitForm(e, type) {
+e.preventDefault();
+const form = e.target;
+const btn = form.querySelector('.submit-btn');
+const data = new FormData(form);
+const result = {};
+
+data.forEach((val, key) => {
+if(result[key]) {
+result[key] = Array.isArray(result[key])
+? [...result[key], val]
+: [result[key], val];
+} else {
+result[key] = val;
+}
+});
+
+btn.disabled = true;
+btn.textContent = 'Submitting…';
+
+// POST to a form endpoint — replace with your actual endpoint
+// Options: Formspree, Netlify Forms, or your own backend
+const ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'; // ← replace this
+
+fetch(ENDPOINT, {
+method: 'POST',
+headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+body: JSON.stringify({ ...result, survey_type: type })
+})
+.then(res => {
+// Show success regardless — for demo/Selonate testing
+form.classList.remove('visible');
+document.getElementById('success-' + type).classList.add('visible');
+window.scrollTo({ top: document.getElementById('survey').offsetTop - 80, behavior: 'smooth' });
+})
+.catch(() => {
+// Still show success in demo mode — swap for real error handling in production
+form.classList.remove('visible');
+document.getElementById('success-' + type).classList.add('visible');
+window.scrollTo({ top: document.getElementById('survey').offsetTop - 80, behavior: 'smooth' });
+});
+}
+
+// Smooth scroll for nav link on mobile
+document.querySelector('nav .nav-pill').addEventListener('click', e => {
+e.preventDefault();
+document.getElementById('survey').scrollIntoView({ behavior: 'smooth' });
+});
+</script>
+</body>
+</html>
